@@ -1,0 +1,72 @@
+/* components/ServiceCard/ServiceCard.module.scss */
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 170px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+}
+
+.infoContainer {
+    width: 100%;
+}
+
+.chip {
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.cardTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.contactPerson {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.address {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.button {
+    background-color: #947ece;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #7a5bbf;
+    }
+}

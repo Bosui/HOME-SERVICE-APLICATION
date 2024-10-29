@@ -1,0 +1,43 @@
+/* components/Container/Container.module.scss */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Leiskite kortelėms apvynioti */
+    justify-content: flex-start;
+    /* Pradėkite nuo kairės pusės */
+    gap: 20px;
+    /* Atstumas tarp kortelių */
+    padding: 20px;
+    /* Padedama vidinė erdvė */
+}
+
+.card {
+    border: 1px solid #ddd;
+    /* Šviesus rėmelis */
+    border-radius: 8px;
+    /* Apvalinti kampai */
+    padding: 15px;
+    /* Vidinė erdvė */
+    width: 150px;
+    /* Kortelės plotis */
+    display: flex;
+    flex-direction: column;
+    /* Vertikalus išdėstymas */
+    align-items: center;
+    /* Centruoti turinį */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    /* Sklandus efektas */
+
+    &:hover {
+        transform: scale(1.05);
+        /* Padrąsinti, kai pelės žymeklis ant kortelės */
+        border-color: #007bff;
+        /* Pakeisti rėmelio spalvą, kai aktyvus */
+    }
+}
+
+.icon {
+    margin-bottom: 10px;
+    /* Atstumas tarp ikonos ir pavadinimo */
+}
