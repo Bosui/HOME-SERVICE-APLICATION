@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logoipsum.png';
+import logo from '../../assets/logo.svg';
 import styles from './Topbar.module.scss';
 
 const Topbar = () => (
