@@ -2,54 +2,37 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import ServiceCard from '../ServiceCard/ServiceCard';
 import styles from './Container.module.scss';
 
-const Container = () => {
+const Container = ({ onCategorySelect, variant = 'horizontal' }) => {
   const navigate = useNavigate();
 
   const handleCardClick = (category) => {
+    if (onCategorySelect) {
+      onCategorySelect(category);
+    }
     navigate(`/services/${category}`);
   };
 
+  const containerClass = variant === 'horizontal' ? styles.horizontal : styles.vertical;
+
+  const services = [
+    { title: 'Cleaning', iconUrl: 'https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/64/external-cleaning-cleaning-icongeek26-linear-colour-icongeek26.png' },
+    { title: 'Repair', iconUrl: 'https://img.icons8.com/office/64/maintenance.png' },
+    { title: 'Painting', iconUrl: 'https://img.icons8.com/doodle/64/paint-brush--v1.png' },
+    { title: 'Shifting', iconUrl: 'https://img.icons8.com/external-filled-outline-design-circle/64/external-Shifting-Truck-home-repair-and-maintenance-filled-outline-design-circle.png' },
+    { title: 'Plumbing', iconUrl: 'https://img.icons8.com/plasticine/64/plumbing.png' },
+    { title: 'Electric', iconUrl: 'https://img.icons8.com/external-others-phat-plus/64/external-electric-electric-vehicles-color-line-others-phat-plus-6.png' },
+  ];
+
   return (
-    <div className={styles.container}>
-      <div className={styles.card} onClick={() => handleCardClick('cleaning')}>
-        <ServiceCard 
-          title="Cleaning" 
-          icon={<img className={styles.icon} src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/64/external-cleaning-cleaning-icongeek26-linear-colour-icongeek26.png" alt="Cleaning Icon" />} 
-        />
-      </div>
-      <div className={styles.card} onClick={() => handleCardClick('repair')}>
-        <ServiceCard 
-          title="Repair" 
-          icon={<img className={styles.icon} src="https://img.icons8.com/office/64/maintenance.png" alt="Repair Icon" />} 
-        />
-      </div>
-      <div className={styles.card} onClick={() => handleCardClick('painting')}>
-        <ServiceCard 
-          title="Painting" 
-          icon={<img className={styles.icon} src="https://img.icons8.com/doodle/64/paint-brush--v1.png" alt="Painting Icon" />} 
-        />
-      </div>
-      <div className={styles.card} onClick={() => handleCardClick('shifting')}>
-        <ServiceCard 
-          title="Shifting" 
-          icon={<img className={styles.icon} src="https://img.icons8.com/external-filled-outline-design-circle/64/external-Shifting-Truck-home-repair-and-maintenance-filled-outline-design-circle.png" alt="Shifting Icon" />} 
-        />
-      </div>
-      <div className={styles.card} onClick={() => handleCardClick('plumbing')}>
-        <ServiceCard 
-          title="Plumbing" 
-          icon={<img className={styles.icon} src="https://img.icons8.com/plasticine/64/plumbing.png" alt="Plumbing Icon" />} 
-        />
-      </div>
-      <div className={styles.card} onClick={() => handleCardClick('electric')}>
-        <ServiceCard 
-          title="Electric" 
-          icon={<img className={styles.icon} src="https://img.icons8.com/external-others-phat-plus/64/external-electric-electric-vehicles-color-line-others-phat-plus-6.png" alt="Electric Icon" />} 
-        />
-      </div>
+    <div className={`${styles.container} ${containerClass}`}>
+      {services.map((service) => (
+        <div key={service.title} className={styles.card} onClick={() => handleCardClick(service.title.toLowerCase())}>
+          <img className={styles.icon} src={service.iconUrl} alt={`${service.title} Icon`} />
+          <span className={styles.textLabel}>{service.title}</span>
+        </div>
+      ))}
     </div>
   );
 };

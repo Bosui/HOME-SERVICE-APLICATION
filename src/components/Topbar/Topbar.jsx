@@ -9,7 +9,6 @@ const Topbar = () => (
   <nav className={styles.topbar}>
     <div className={styles.logoContainer}>
       <img src={logo} alt="LogoIpsum" className={styles.logo} />
-      <span className={styles.logoText}>LogoIpsum</span>
     </div>
     <ul className={styles.navList}>
       <li><Link to="/">Home</Link></li>

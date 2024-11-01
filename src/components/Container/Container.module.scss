@@ -1,43 +1,45 @@
-/* components/Container/Container.module.scss */
-
 .container {
+    width: 80%;
+        /* arba nurodykite konkretų plotį, pvz., 600px */
+        max-width: 1200px;
+        /* maksimalus plotis, jei reikalinga */
+        margin: 0 auto;
+        /* centruoja elementą horizontaliai */
+        padding: 20px;
+        /* tarpas aplink turinį, jei reikalinga */
     display: flex;
-    flex-wrap: wrap;
-    /* Leiskite kortelėms apvynioti */
+    gap: 1rem;
+}
+
+.horizontal {
+    flex-direction: row;
+    justify-content: center;
+    /* Centruoja elementus horizontaliai */
+    align-items: center;
+    /* Centruoja elementus vertikaliai */
+}
+
+.vertical {
+    flex-direction: column;
+    align-items: center;
+    /* Centruoja elementus horizontaliai */
     justify-content: flex-start;
-    /* Pradėkite nuo kairės pusės */
-    gap: 20px;
-    /* Atstumas tarp kortelių */
-    padding: 20px;
-    /* Padedama vidinė erdvė */
+    gap: 1rem;
+    /* Tarpas tarp kortelių vertikaliame išdėstyme */
 }
 
 .card {
-    border: 1px solid #ddd;
-    /* Šviesus rėmelis */
+    cursor: pointer;
+    padding: 1rem;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    /* Apvalinti kampai */
-    padding: 15px;
-    /* Vidinė erdvė */
-    width: 150px;
-    /* Kortelės plotis */
-    display: flex;
-    flex-direction: column;
-    /* Vertikalus išdėstymas */
-    align-items: center;
-    /* Centruoti turinį */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    /* Sklandus efektas */
-
-    &:hover {
-        transform: scale(1.05);
-        /* Padrąsinti, kai pelės žymeklis ant kortelės */
-        border-color: #007bff;
-        /* Pakeisti rėmelio spalvą, kai aktyvus */
-    }
+    text-align: center;
+    /* Centruoja tekstą kortelėje */
+    width: 100%;
+    /* Praplečia kortelę visam konteineriui vertikaliame išdėstyme */
 }
 
 .icon {
-    margin-bottom: 10px;
-    /* Atstumas tarp ikonos ir pavadinimo */
+    width: 40px;
+    height: 40px;
 }

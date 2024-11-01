@@ -1,41 +1,16 @@
-/* components/ServiceCard/ServiceCard.module.scss */
-
-.card {
-    background-color: #f5f0ff;
-    /* Švelniai violetinis fonas */
-    border-radius: 12px;
-    /* Apvalinti kampai */
-    padding: 20px;
-    width: 120px;
-    /* Pritaikytas plotis */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Švelnus šešėlis */
+.serviceCardContainer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-        transform: scale(1.05);
-        /* Priartinimo efektas */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        /* Didesnis šešėlis */
-    }
+    flex-direction: row;
+    width: 30%;
 }
 
-.icon {
-    width: 40px;
-    /* Ikonos dydis */
-    height: 40px;
-    margin-bottom: 10px;
-   
+.leftPanel {
+    flex: 1; // Nustato, kad užima pusę turimos vietos
+    padding: 10px;
+    border-right: 1px solid #ddd; // Prideda skiriamąją liniją tarp panelių
 }
 
-.textLabel {
-    color: #947ece;
-    /* Violetinis tekstas */
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 5px;
+.rightPanel {
+    flex: 2; // Užima likusią dalį vietos
+    padding: 10px;
 }
