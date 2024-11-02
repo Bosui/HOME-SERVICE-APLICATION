@@ -12,8 +12,6 @@ const Home = () => {
     setSelectedCategory(category);
   };
 
-;
-  
   return (
     <div className={styles.homeContainer}>
       <h1 className={styles.title}>
@@ -22,9 +20,9 @@ const Home = () => {
       </h1>
       <h2 className={styles.subtitle}>Explore Best Home Service & Repair near you</h2>
       <SearchBar />
-      <div className={styles.contentWrapper}> {/* Naujai pridėtas wrapper */}
-        <Container onCategorySelect={handleCategorySelect} />
-        <CardContainer  filter={selectedCategory} />
+      <div className={styles.contentWrapper}> {/* Wrapper apgaubiantis turinį */}
+        <Container className={styles.container} onCategorySelect={handleCategorySelect} />
+        <CardContainer className={styles.cardContainer} filter={selectedCategory} variant="horizontal" />
       </div>
     </div>
   );

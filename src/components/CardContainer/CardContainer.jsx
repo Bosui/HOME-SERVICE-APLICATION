@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from './CardContainer.module.scss';
 
-const CardContainer = ({ filter }) => {
+const CardContainer = ({ filter, variant = 'horizontal' }) => {
   // Pavyzdiniai kortelių duomenys
   const cards = [
     {
@@ -27,7 +27,7 @@ const CardContainer = ({ filter }) => {
       image: 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/08/featured_image_what_size_moving_truck_do_you_need.jpeg.jpg',
       category: 'shifting',
       title: 'Moki veži',
-      contactPerson: 'Tadas Gedvilas',
+      contactPerson: 'Raimondas Butauskas',
       address: 'Kauno g. 27, Vilnius',
     },
     {
@@ -35,16 +35,19 @@ const CardContainer = ({ filter }) => {
       image: 'https://grainger-prod.adobecqms.net/content/dam/grainger/gus/en/public/digital-tactics/know-how/hero/kh-qualified-vs-unqualified-electrical-workers_feat.jpg',
       category: 'electric',
       title: 'Elektrikas į namus',
-      contactPerson: 'Tadas Gedvilas',
+      contactPerson: 'Ramunė Butauskienė',
       address: 'Kauno g. 27, Vilnius',
     },
   ];
 
   // Filtruojame korteles pagal perduotą `filter` vertę
-  const filteredCards = cards.filter((card) => !filter || card.category === filter);
+  const filteredCards = cards.filter((card) => card.category === filter || !filter);
 
+  // Pritaikome variantą stiliaus klasėje
+  const containerClass = variant === 'horizontal' ? styles.horizontal : styles.vertical;
+    
   return (
-    <div className={styles.cardContainer}>
+    <div className={`${styles.cardContainer} ${containerClass} ${variant === 'horizontal' ? styles.horizontal : styles.vertical}`}>
       {filteredCards.length > 0 ? (
         filteredCards.map((card) => (
           <div key={card.id} className={styles.card}>

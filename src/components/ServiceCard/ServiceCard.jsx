@@ -24,7 +24,7 @@ const ServiceCard = () => {
 
       {/* Dešinėje pusėje - CardContainer su filtravimo parametru */}
       <div className={styles.rightPanel}>
-        <CardContainer filter={selectedCategory} />
+        <CardContainer filter={selectedCategory} variant="horizontal"/>
       </div>
     </div>
   );
