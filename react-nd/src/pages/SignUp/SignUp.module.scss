@@ -1,0 +1,19 @@
+.signUpContainer {
+    text-align: center;
+    padding: 20px;
+}
+
+.signUpContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signUpContainer label {
+    margin-bottom: 10px;
+}
+
+.signUpContainer button {
+    margin-top: 10px;
+    padding: 5px 10px;
+}

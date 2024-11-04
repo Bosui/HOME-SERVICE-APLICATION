@@ -1,0 +1,54 @@
+/* components/Home/Home.module.scss */
+
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.popularBusinesses {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Stilius apgaubiančiam turiniui */
+.contentWrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    /* Maksimalus plotis dideliuose ekranuose */
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* `CardContainer` komponento stiliai */
+.cardContainer {
+    display: flex;
+    width: 100%;
+    /* Pilnas plotis */
+    max-width: 1200px;
+    /* Maksimalus plotis dideliuose ekranuose */
+    justify-content: center;
+    padding: 20px;
+}

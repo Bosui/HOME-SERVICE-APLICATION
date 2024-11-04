@@ -1,0 +1,45 @@
+.container {
+    width: 80%;
+        /* arba nurodykite konkretų plotį, pvz., 600px */
+        max-width: 1200px;
+        /* maksimalus plotis, jei reikalinga */
+        margin: 0 auto;
+        /* centruoja elementą horizontaliai */
+        padding: 20px;
+        /* tarpas aplink turinį, jei reikalinga */
+    display: flex;
+    gap: 1rem;
+}
+
+.horizontal {
+    flex-direction: row;
+    justify-content: center;
+    /* Centruoja elementus horizontaliai */
+    align-items: center;
+    /* Centruoja elementus vertikaliai */
+}
+
+.vertical {
+    flex-direction: column;
+    align-items: center;
+    /* Centruoja elementus horizontaliai */
+    justify-content: flex-start;
+    gap: 1rem;
+    /* Tarpas tarp kortelių vertikaliame išdėstyme */
+}
+
+.card {
+    cursor: pointer;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    /* Centruoja tekstą kortelėje */
+    width: 100%;
+    /* Praplečia kortelę visam konteineriui vertikaliame išdėstyme */
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
