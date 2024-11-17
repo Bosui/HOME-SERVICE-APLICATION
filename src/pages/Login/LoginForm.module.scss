@@ -1,0 +1,119 @@
+/* src/components/LoginForm/LoginForm.module.scss */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Tarpa sumažinome iki 20px */
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 40px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #ffffff;
+  display: inline-block;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Vienodi tarpai tarp įvesties laukų */
+}
+
+input {
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #333;
+  transition: border-color 0.3s ease;
+  width: 100%; /* Užtikriname, kad plotis bus vienodas */
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #2575fc;
+  outline: none;
+}
+
+button {
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #36d1dc, #5b86e5);
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.socialLoginButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px; /* Šiek tiek didesnis tarpas virš socialinių mygtukų */
+}
+
+.socialLoginButtons a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.socialLoginButtons a.facebook {
+  background-color: #3b5998;
+}
+
+.socialLoginButtons a.google {
+  background-color: #db4437;
+}
+
+.socialLoginButtons a:hover {
+  filter: brightness(1.1);
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.signupLink {
+  text-align: center;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.signupLink a {
+  color: #ffdb58;
+  text-decoration: underline;
+  font-weight: bold;
+}

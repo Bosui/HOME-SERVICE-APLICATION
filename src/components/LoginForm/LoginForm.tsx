@@ -13,7 +13,7 @@ const LoginForm: React.FC = () => {
 
   return (
     <div>
-      <h2>Login Form</h2>
+      <h2>Login</h2>
       <Formik
         initialValues={{
           email: '',
@@ -25,26 +25,17 @@ const LoginForm: React.FC = () => {
         }}
       >
         <Form className={styles.form}>
-          <div className={styles.inputContainer}>
-            <label htmlFor="email">Email or Username</label>
+          <div>
+            <label htmlFor="email">Email</label>
             <Field type="email" id="email" name="email" placeholder="Enter your email" />
             <ErrorMessage name="email" component="div" className={styles.error} />
           </div>
-          <div className={styles.inputContainer}>
+          <div>
             <label htmlFor="password">Password</label>
             <Field type="password" id="password" name="password" placeholder="Enter your password" />
             <ErrorMessage name="password" component="div" className={styles.error} />
           </div>
           <button type="submit">Login</button>
-
-          <div className={styles.socialLoginButtons}>
-            <a href="#" className={`${styles.socialButton} ${styles.facebook}`}>Facebook</a>
-            <a href="#" className={`${styles.socialButton} ${styles.google}`}>Google</a>
-          </div>
-
-          <p className={styles.signupLink}>
-            Not a member? <a href="/signup">Signup now</a>
-          </p>
         </Form>
       </Formik>
     </div>
