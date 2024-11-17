@@ -1,9 +1,7 @@
 // src/components/RegisterForm/RegisterForm.tsx
-
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React from 'react';
-import * as Yup from 'yup';
-import styles from './RegisterForm.module.scss'; // Importuojame stilius
+import * as Yup from 'yup'; // Yup validacijai
 
 const RegisterForm: React.FC = () => {
   // Yup validacija
@@ -18,7 +16,7 @@ const RegisterForm: React.FC = () => {
 
   return (
     <div>
-      <h2>Sign Up Form</h2>
+      <h2>Register</h2>
       <Formik
         initialValues={{
           username: '',
@@ -32,37 +30,28 @@ const RegisterForm: React.FC = () => {
           console.log(values);
         }}
       >
-        <Form className={styles.form}>
-          <div className={styles.inputContainer}>
+        <Form>
+          <div>
             <label htmlFor="username">Username</label>
             <Field type="text" id="username" name="username" placeholder="Enter your username" />
-            <ErrorMessage name="username" component="div" className={styles.error} />
+            <ErrorMessage name="username" component="div" className="error" />
           </div>
-          <div className={styles.inputContainer}>
+          <div>
             <label htmlFor="email">Email</label>
             <Field type="email" id="email" name="email" placeholder="Enter your email" />
-            <ErrorMessage name="email" component="div" className={styles.error} />
+            <ErrorMessage name="email" component="div" className="error" />
           </div>
-          <div className={styles.inputContainer}>
+          <div>
             <label htmlFor="password">Password</label>
             <Field type="password" id="password" name="password" placeholder="Enter your password" />
-            <ErrorMessage name="password" component="div" className={styles.error} />
+            <ErrorMessage name="password" component="div" className="error" />
           </div>
-          <div className={styles.inputContainer}>
+          <div>
             <label htmlFor="confirmPassword">Confirm Password</label>
             <Field type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" />
-            <ErrorMessage name="confirmPassword" component="div" className={styles.error} />
+            <ErrorMessage name="confirmPassword" component="div" className="error" />
           </div>
-          <button type="submit">Sign Up</button>
-
-          <div className={styles.socialLoginButtons}>
-            <a href="#" className={`${styles.socialButton} ${styles.facebook}`}>Facebook</a>
-            <a href="#" className={`${styles.socialButton} ${styles.google}`}>Google</a>
-          </div>
-
-          <p className={styles.signupLink}>
-            Already have an account? <a href="/login">Login here</a>
-          </p>
+          <button type="submit">Register</button>
         </Form>
       </Formik>
     </div>

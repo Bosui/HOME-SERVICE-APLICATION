@@ -1,6 +1,5 @@
 // components/Topbar/Topbar.jsx
 
-import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import styles from './Topbar.module.scss';
@@ -16,7 +15,8 @@ const Topbar = () => (
       <li><Link to="/about">About Us</Link></li>
     </ul>
     <div className={styles.right}>
-      <Link to="/signup" className={styles.loginButton}>Login / Sign Up</Link>
+      <Link to="/login" className={styles.loginButton}>Login</Link>
+      <Link to="/signup" className={styles.loginButton}>Sign Up</Link>
     </div>
   </nav>
 );
