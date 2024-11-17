@@ -1,19 +1,29 @@
-// components/Container/Container.jsx
+// src/components/Container/Container.tsx
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Container.module.scss';
 
-const Container = ({ onCategorySelect, variant = 'horizontal' }) => {
-  const navigate = useNavigate();
+// Tipų apibrėžimas `Container` komponentui
+interface ContainerProps {
+  onCategorySelect?: (category: string) => void;  // Funkcija, kuri priima kategoriją kaip string ir neturi grąžinamos reikšmės
+  variant?: 'horizontal' | 'vertical'; // Galimos reikšmės 'horizontal' arba 'vertical'
+}
 
-  const handleCardClick = (category) => {
+const Container: React.FC<ContainerProps> = ({ onCategorySelect, variant = 'horizontal' }) => {
+  const navigate = useNavigate();
+// console.log(`Container variant A horizontal: ${variant}`);  // Patikrinkite variant prop'ą 
+  // Funkcija, kurią kviečiame paspaudus ant paslaugos kortelės
+  const handleCardClick = (category: string): void => {
     if (onCategorySelect) {
       onCategorySelect(category);
+    } else {
+      console.log(`Selected category: ${category}`);  // Jei nėra funkcijos, tiesiog išvedame reikšmę į konsolę
     }
     navigate(`/services/${category}`);
   };
 
+  // Pasirenkame klasę priklausomai nuo varianto ('horizontal' arba 'vertical')
   const containerClass = variant === 'horizontal' ? styles.horizontal : styles.vertical;
 
   const services = [

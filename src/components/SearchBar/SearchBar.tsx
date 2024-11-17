@@ -1,9 +1,9 @@
-// components/SearchBar/SearchBar.jsx
+// src/components/SearchBar/SearchBar.tsx
 
 import React from 'react';
 import styles from './SearchBar.module.scss';
 
-const SearchBar = () => {
+const SearchBar: React.FC = () => {
   return (
     <div className={styles.searchBarContainer}>
       <div className={styles.searchBar}>

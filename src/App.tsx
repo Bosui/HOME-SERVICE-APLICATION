@@ -1,4 +1,4 @@
-// App.jsx
+// src/App.tsx
 
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -12,8 +12,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Services from './pages/Services/Services';
 import SignUp from './pages/SignUp/SignUp';
 
-
-const App = () => {
+const App: React.FC = () => {
   return (
     <div style={{ width: '100vw', overflowX: 'hidden' }}> {/* Užtikrina, kad viskas tilptų ekrane */}
       <Topbar />

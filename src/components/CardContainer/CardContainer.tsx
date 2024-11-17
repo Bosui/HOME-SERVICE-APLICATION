@@ -1,11 +1,28 @@
-// components/CardContainer/CardContainer.jsx
+// src/components/CardContainer/CardContainer.tsx
 
 import React from 'react';
 import styles from './CardContainer.module.scss';
 
-const CardContainer = ({ filter, variant = 'horizontal' }) => {
+// Tipas kortelei
+interface Card {
+  id: number;
+  image: string;
+  category: string;
+  title: string;
+  contactPerson: string;
+  address: string;
+}
+
+// Tipų apibrėžimas `CardContainer` komponentui
+interface CardContainerProps {
+  filter?: string;  // Filtras, pagal kurį pasirenkame korteles
+  variant?: 'horizontal' | 'vertical';  // Variantas, kuris nustato, ar kortelės bus horizontalios, ar vertikalios
+}
+
+const CardContainer: React.FC<CardContainerProps> = ({ filter, variant = 'horizontal' }) => {
+ 
   // Pavyzdiniai kortelių duomenys
-  const cards = [
+  const cards: Card[] = [
     {
       id: 1,
       image: 'https://www.pristinehome.com.au/wp-content/uploads/2020/01/15-Cleaning-Tips-from-Professional-Cleaners-3.jpg',
@@ -47,7 +64,7 @@ const CardContainer = ({ filter, variant = 'horizontal' }) => {
   const containerClass = variant === 'horizontal' ? styles.horizontal : styles.vertical;
     
   return (
-    <div className={`${styles.cardContainer} ${containerClass} ${variant === 'horizontal' ? styles.horizontal : styles.vertical}`}>
+    <div className={`${styles.cardContainer} ${containerClass}`}>
       {filteredCards.length > 0 ? (
         filteredCards.map((card) => (
           <div key={card.id} className={styles.card}>
