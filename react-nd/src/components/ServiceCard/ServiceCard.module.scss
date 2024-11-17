@@ -1,0 +1,16 @@
+.serviceCardContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.leftPanel {
+    flex: 0.2; // Nustato, kad užima pusę turimos vietos
+    padding: 10px;
+    border-right: 1px solid #ddd; // Prideda skiriamąją liniją tarp panelių
+}
+
+.rightPanel {
+    flex: 2.8; // Užima likusią dalį vietos
+    padding: 10px;
+}

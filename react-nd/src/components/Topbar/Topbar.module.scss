@@ -1,0 +1,62 @@
+/* components/Topbar/Topbar.module.scss */
+
+.topbar {
+    position: fixed;
+        top: 0;
+        left: 0;
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #fff;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #333;
+}
+
+.navList {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    flex: 1;
+    justify-content: left;
+    margin: 0;
+    padding: 0;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.loginButton {
+    background-color: #6200ee;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.loginButton:hover {
+    background-color: #3700b3;
+}
+
