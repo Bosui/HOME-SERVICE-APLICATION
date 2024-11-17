@@ -1,5 +1,5 @@
 .container {
-    width: 50%;
+    width: 80%;
         /* arba nurodykite konkretų plotį, pvz., 600px */
         max-width: 1200px;
         /* maksimalus plotis, jei reikalinga */
@@ -7,15 +7,15 @@
         /* centruoja elementą horizontaliai */
         padding: 20px;
         /* tarpas aplink turinį, jei reikalinga */
-    display: flex ;
+    display: flex;
     gap: 1rem;
 }
 
 .horizontal {
-    flex-direction: row ;
-    justify-content: center ;
+    flex-direction: row;
+    justify-content: center;
     /* Centruoja elementus horizontaliai */
-    align-items: center ;
+    align-items: center;
     /* Centruoja elementus vertikaliai */
 }
 
